@@ -438,8 +438,10 @@ button[type="submit"] { margin-top: 12px; }
 }
 @media (max-width: 768px) {
   .hamburger { display: flex; }
-  .theme-toggle-desktop { display: none; }
-  .theme-toggle-mobile { display: block; }
+  /* Keep the desktop toggle visible on mobile and hide the duplicate mobile toggle
+     so the theme button stays outside the hamburger, beside the brand name. */
+  .theme-toggle-desktop { display: block; }
+  .theme-toggle-mobile { display: none; }
   .links {
     position: fixed;
     top: 60px;
