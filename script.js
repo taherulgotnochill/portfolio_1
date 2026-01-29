@@ -1,11 +1,17 @@
 // Theme toggle
 const html = document.documentElement;
-const toggle = document.getElementById('themeToggle');
-toggle.addEventListener('click', () => {
+const toggleDesktop = document.getElementById('themeToggle');
+const toggleMobile = document.getElementById('themeToggle-mobile');
+
+function toggleTheme() {
   const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
-});
+}
+
+toggleDesktop.addEventListener('click', toggleTheme);
+toggleMobile.addEventListener('click', toggleTheme);
+
 const saved = localStorage.getItem('theme');
 if (saved) html.setAttribute('data-theme', saved);
 
